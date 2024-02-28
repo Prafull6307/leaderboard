@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Rank</title>
+</head>
+<body>
+  <h1>User Rank</h1>
+  <label for="userIdInput">Enter User ID:</label>
+  <input type="text" id="userIdInput">
+  <button id="getRankButton">Get Rank</button>
+  <p id="rankResult"></p>
+
+  <script>
+    const getRankButton = document.getElementById('getRankButton');
+    const userIdInput = document.getElementById('userIdInput');
+    const rankResult = document.getElementById('rankResult');
+
+    getRankButton.addEventListener('click', async () => {
+      const userId = userIdInput.value;
+
+      try {
+        const response = await fetch(`http://localhost:3000/user-rank/${userId}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          rankResult.textContent = `User ${userId} has rank: ${data.rank}`;
+        } else {
+          rankResult.textContent = data.error || 'Failed to get user rank';
+        }
+      } catch (error) {
+        console.error('Error fetching user rank:', error);
+        rankResult.textContent = 'An error occurred while fetching user rank';
+      }
+    });
+  </script>
+</body>
+</html>
