@@ -1,0 +1,24 @@
+<h1>Top scorer</h1>
+<table class="table table-dark" >
+  <thead>
+     <tr>
+       <th scope="col">UID</th>
+         <th scope="col">Name</th>
+         <th scope="col">Score</th>
+         <th scope="col">Country</th>
+        
+      
+     </tr>
+    </thead>
+     <tbody>
+     <tr *ngFor="let item of data">
+      
+       <td>{{item.UID}}</td>
+       <td>{{item.Name}}</td>
+       <td>{{item.Score}}</td>
+       <td>{{item.Country}}</td>
+      
+       
+     </tr></tbody>
+   </table>
+  
