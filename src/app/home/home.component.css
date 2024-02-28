@@ -1,0 +1,30 @@
+   
+  body {
+     background-color: #f8f9fa;
+     
+   }
+   .leaderboard-container {
+     max-width: 800px;
+     margin: 50px auto;
+   }
+   .leaderboard-header {
+     text-align: center;
+     margin-bottom: 30px;
+   }
+   .leaderboard-header h1 {
+     color: #343a40;
+   }
+   .player-list {
+     list-style: none;
+     padding: 0;
+   }
+   .player-item {
+     background-color: #fff;
+     border: 1px solid #dee2e6;
+     border-radius: 5px;
+     margin-bottom: 10px;
+     padding: 15px;
+   }
+   .player-item:nth-child(even) {
+     background-color: #f8f9fa;
+   }

@@ -1,0 +1,15 @@
+<!-- user-rank.component.html -->
+
+<div>
+     <h2>User Rank</h2>
+     <form (ngSubmit)="getUserRank()">
+       <label for="uid">Enter UID:</label>
+       <input type="text" id="uid" name="uid" [(ngModel)]="uid" required>
+       <button type="submit">Get Rank</button>
+     </form>
+     <div *ngIf="userRank" class="m-5">
+      <h3> <p class="text-primary">UID: {{ userRank.userId }}</p></h3>
+      <h2> <p class="text-secondary">Rank: {{ userRank.rank }}</p></h2>
+     </div>
+   </div>
+   

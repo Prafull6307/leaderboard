@@ -1,0 +1,26 @@
+
+<form (submit)="onSubmit($event, country.value)">
+    <div class="mt-2 d-flex justify-content-around"> <h2><label class="text-primary font-weight-bold" for="country">Country:</label></h2>
+     <input  type="text" id="country" #country>
+ <button   type="myClick">Fetch Leaderboard</button></div>
+   </form>
+   <table  class="table table-dark" *ngIf="leaderboard">
+     <thead>
+       <tr>
+         <th>UID</th>
+         <th>Name</th>
+         <th>Country</th>
+         <th>Timestamp</th>
+         <th>Score</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let entry of leaderboard">
+         <td>{{ entry.UID }}</td>
+         <td>{{ entry.Name }}</td>
+         <td>{{ entry.Country }}</td>
+         <td>{{ entry.Timestamp }}</td>
+         <td>{{ entry.Score }}</td>
+       </tr>
+     </tbody>
+   </table>
